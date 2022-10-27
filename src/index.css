@@ -1,0 +1,44 @@
+
+
+html {
+  height: 100%;
+}
+body {
+  margin: 0;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+#root {
+  height: 100%;
+}
+.react-datepicker__header {
+  background-image: linear-gradient(to right, #1f0830, #0f0718) !important;
+}
+.react-datepicker {
+  background-image: linear-gradient(to right, #320D4D, #30184D) !important;
+  border: none !important;
+  color:white !important;
+  font-weight: 800 !important;
+}
+.react-datepicker__current-month {
+  color: white !important;
+}
+.react-datepicker__day-name {
+  color: white !important;
+}
+.react-datepicker__day {
+  color: white !important;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
