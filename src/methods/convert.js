@@ -44,7 +44,6 @@ function convert(data, startDate, endDate, origIatas, destIatas, nDoFrom, nDoTo,
         if (!inAirportScope(origIatas, destIatas, flight.origIata, flight.destIata)) {
             return
         }
-        console.log(123)
 
         flight.nDo = getNdo(new Date(formatDate(flight.fltDate)))
         if (!between(flight.nDo, nDoFrom, nDoTo)) {
@@ -54,7 +53,9 @@ function convert(data, startDate, endDate, origIatas, destIatas, nDoFrom, nDoTo,
         if (!between(flight.amount, bkgFrom, bkgTo)) {
             return
         }
-        flight.class = getClass(flight)
+        // flight.brule = getBrule(flight, 'name')
+
+        flight.class = getClass(flight, brule.brule)
         if (!newJson[flight.fltDate]) {
             newJson[flight.fltDate] = FlightsOverDate(flight.fltDate)
         }

@@ -16,12 +16,12 @@ export default function PickBrule (props) {
 
     function selectBrule(value) {
         console.log(value)
-        setSelectedBrule(value)
+        setSelectedBrule(value.name)
         props.bruleSelected(value)
     }
 
     useEffect(() => {
-        setSelectedBrule(props.savedBrule)
+        setSelectedBrule(props.savedBrule.name)
     }, [props.savedBrule])
 
     return (
@@ -49,7 +49,7 @@ export default function PickBrule (props) {
                             <div key={index}>
                                 <button
                                 href="#"
-                                onClick={(e)=> selectBrule(brule.name)} // onRemoveFlight(fltNum)
+                                onClick={(e)=> selectBrule(brule)} // onRemoveFlight(fltNum)
                                 value={brule}
                                 className='text-gray-700 block px-4 py-2 text-sm flex w-full'
                                 >

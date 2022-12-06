@@ -21,7 +21,7 @@ const classColors = {
     'U': 'bg-black'
 }
 
-function getClass(flt){
+function getClass(flt, brule){
     var amount = 0
     //console.log(flt)
     flt.tickets.forEach(ticket => {
@@ -31,7 +31,7 @@ function getClass(flt){
     var nDate = new Date(formatDate(flt.fltDate)) // Дата вылета рейса
     var nDo = getNdo(nDate) // Кол-во дней до вылета
     //console.log(congestion, nDo)
-    var brule = getBrule(flt)
+    // var brule = getBrule(flt)
 
     var counts = Object.keys(brule[0]) // [0, 1, 2, 3, 4, 6, 8, 10, 12, 14, 17, 20, 24, 28, 32, 36, 40, 45, 50, 60, 80, 100, 120, 180, 260]
     var closest = counts.reduce(function(prev, curr) {

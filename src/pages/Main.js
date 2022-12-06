@@ -7,7 +7,7 @@ import Menu from '../components/menu';
 
 registerLocale('ru', ru)
 
-function Main() {
+function Main(props) {
   
   useEffect(() => {
     // const el = document.getElementById('11/18/22')
@@ -18,7 +18,7 @@ function Main() {
             <div className='leftbar w-auto'>
                 <Menu/>
             </div>
-            <FlightsOverview/>
+            <FlightsOverview db={props.db}/>
         </div>
   );
 }

@@ -3,7 +3,7 @@ const { createProxyMiddleware } = require("http-proxy-middleware");
 module.exports = function(app) {
   app.use("/api/getAllFlightTables",
     createProxyMiddleware({
-      target: "http://158.160.14.25",
+      target: "http://localhost:7771",
       secure: false,
       changeOrigin: true
     })

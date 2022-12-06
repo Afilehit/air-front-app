@@ -7,7 +7,7 @@ import Dexie from "dexie";
 import Filters from './filters';
 import SaveLoad from './filters/save-load';
 
-function FlightsOverview() {
+function FlightsOverview(props) {
     const [isPageLoaded, setIsPageLoaded] = useState(false)
     const [lastUpdatedDate, setLastUpdatedDate] = useState('Никогда')
     const [flights, setFlights] = useState()
@@ -31,15 +31,16 @@ function FlightsOverview() {
     const [filterValue, setFilterValue] = useState({})
     const [saveFilter, setSaveFilter] = useState({})
 
-    const db = new Dexie("ReactDexie");
+    // const db = new Dexie("ReactDexie");
 
-    db.version(4).stores({
-      flights: "id, *data, date",
-      filteredFlights: "id, *data"
-    })
-    db.open().catch((err) => {
-        console.log(err.stack || err)
-    })
+    // db.version(4).stores({
+    //   flights: "id, *data, date",
+    //   filteredFlights: "id, *data"
+    // })
+    // db.open().catch((err) => {
+    //     console.log(err.stack || err)
+    // })
+    const db = props.db
 
 
     function onFilterValueSelected(filterValue){
